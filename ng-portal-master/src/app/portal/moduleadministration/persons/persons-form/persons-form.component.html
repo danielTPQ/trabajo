@@ -1,0 +1,55 @@
+<div class="persons-form">
+  <div class="row">
+    <div class="col-10">
+      <mat-toolbar>
+        <h3>{{ title }}</h3>
+      </mat-toolbar>
+    </div>
+    <div class="col-2">
+      <button matTooltip="Agregar" class="btn-add col-12" mat-mini-fab color="primary" (click)="resetForm()">
+        <mat-icon>add</mat-icon>
+      </button>
+    </div>
+  </div>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+    <mat-form-field class="col-12">
+      <mat-label>Name</mat-label>
+      <input matInput placeholder="Name" formControlName="name">
+      <mat-error *ngIf="form.get('name').errors?.required">
+        {{form.get('name').errors?.required ? 'Este campo es requerido' : ''}}
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="col-12">
+      <mat-label>Lastname</mat-label>
+      <input matInput placeholder="Lastname" formControlName="lastname">
+      <mat-error *ngIf="form.get('lastname').errors?.required">
+        {{form.get('lastname').errors?.required ? 'Este campo es requerido' : ''}}
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="col-12">
+      <mat-label>Salary</mat-label>
+      <input matInput placeholder="Salary" formControlName="salary" type="number">
+      <mat-error *ngIf="form.get('salary').errors?.required">
+        {{form.get('salary').errors?.required ? 'Este campo es requerido' : ''}}
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="col-12">
+      <mat-label>Age</mat-label>
+      <input matInput placeholder="Age" formControlName="age" type="number">
+      <mat-error *ngIf="form.get('age').errors?.required">
+        {{form.get('age').errors?.required ? 'Este campo es requerido' : ''}}
+      </mat-error>
+    </mat-form-field>
+
+    <button matTooltip="Guardar" class="col-12" mat-raised-button color="primary"
+            [disabled]="!this.form.valid && !this.form.disabled">Save
+    </button>
+
+  </form>
+
+</div>

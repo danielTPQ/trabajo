@@ -1,0 +1,14 @@
+.persons-component {
+  table {
+    width: 100%;
+
+    tr {
+      cursor: pointer;
+      &:hover {
+        background: #e6ebf1;
+      }
+    }
+  }
+
+
+}

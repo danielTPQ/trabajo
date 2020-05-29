@@ -1,0 +1,54 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.is-mobile .toolbar {
+  position: fixed;
+  z-index: 2;
+}
+
+h1.app-name {
+  margin-left: 8px;
+}
+
+.sidenav-container {
+  flex: 1;
+}
+
+.is-mobile .sidenav-container {
+  flex: 1 0 auto;
+}
+
+
+.logo {
+  color: #eeeeee;
+  text-align: center;
+}
+
+.menu {
+  background: #265599;
+  width: 300px;
+}
+
+.menu-item {
+  font-weight: bold;
+  height: 50px;
+  vertical-align: middle;
+  border-bottom: 1px solid #eff3f6;
+  color: #eff3f6;
+}
+
+.menu-item {
+  color: #f1f1f1;
+  :hover {
+    color: #265599;
+    background: #f1f1f1;
+    cursor: pointer;
+  }
+}
